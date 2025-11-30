@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasos - IZAplantas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <h1>IZA<span>plantas</span></h1>
+                </div>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="plantas.html">Plantas</a></li>
+                        <li><a href="vasos.html" class="active">Vasos</a></li>
+                        <li><a href="acessorios.html">Acessórios</a></li>
+                        <li><a href="decoracao.html">Decoração</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container page-header">
+        <h1>Vasos e Cachepôs</h1>
+        <p>Encontre o vaso perfeito para cada planta e estilo</p>
+    </section>
+
+    <section class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="tipo-vaso">Tipo de Vaso</label>
+                <select id="tipo-vaso">
+                    <option value="all">Todos os tipos</option>
+                    <option value="barro">Vaso de Barro</option>
+                    <option value="plastico">Vaso de Plástico</option>
+                    <option value="vietnamita">Vaso Vietnamita</option>
+                    <option value="cachepo">Cachepô Decorativo</option>
+                    <option value="suporte">Suportes e Pedestais</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="tamanho-vaso">Tamanho</label>
+                <select id="tamanho-vaso">
+                    <option value="all">Todos os tamanhos</option>
+                    <option value="p">Pequeno (P)</option>
+                    <option value="m">Médio (M)</option>
+                    <option value="g">Grande (G)</option>
+                    <option value="gg">Extra Grande (GG)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="cor-vaso">Cor</label>
+                <select id="cor-vaso">
+                    <option value="all">Todas as cores</option>
+                    <option value="branco">Branco</option>
+                    <option value="preto">Preto</option>
+                    <option value="terracota">Terracota</option>
+                    <option value="colorido">Colorido</option>
+                    <option value="natural">Natural</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products" id="vasosProducts">
+            <!-- Produtos de vasos serão carregados aqui -->
+        </div>
+    </section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IZAplantas</h3>
+                <p>Transformando ambientes com a beleza da natureza</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jardin.iza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5573999535407" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/drtwyCgQq4GimYsn8" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="plantas.html">Plantas</a></li>
+                    <li><a href="vasos.html">Vasos</a></li>
+                    <li><a href="acessorios.html">Acessórios</a></li>
+                    <li><a href="decoracao.html">Decoração</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Horário de Funcionamento</h3>
+                <ul>
+                    <li>Segunda a Sexta: 8h às 17h</li>
+                    <li>Sábado: 8h às 12h</li>
+                    <li>Domingo: Fechado</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Localização</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Vila Marambaia KM6</li>
+                    <li>CEP: 45530-000</li>
+                    <li>Atrás do Posto da Polícia Rodoviária</li>
+                    <li>
+                        <a href="https://maps.app.goo.gl/drtwyCgQq4GimYsn8" target="_blank" style="color: var(--verde-folha);">
+                            <i class="fas fa-directions"></i> Ver no Google Maps
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 IZAplantas - Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Carrinho de Compras -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Seu Carrinho</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Seu carrinho está vazio</p>
+                </div>
+            </div>
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">R$ 0,00</span>
+                </div>
+                <button class="btn" id="checkoutBtn" style="width: 100%;">Finalizar Pedido via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Filtros específicos para vasos
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarProdutosPorCategoria('vasos', 'vasosProducts');
+            
+            // Event listeners para filtros
+            document.getElementById('tipo-vaso').addEventListener('change', filtrarVasos);
+            document.getElementById('tamanho-vaso').addEventListener('change', filtrarVasos);
+            document.getElementById('cor-vaso').addEventListener('change', filtrarVasos);
+        });
+
+        function filtrarVasos() {
+            const tipo = document.getElementById('tipo-vaso').value;
+            const tamanho = document.getElementById('tamanho-vaso').value;
+            const cor = document.getElementById('cor-vaso').value;
+            
+            // Implementar lógica de filtro
+            console.log('Filtrando vasos:', {tipo, tamanho, cor});
+        }
+
+        // Adicionar produtos de exemplo para vasos
+        function inicializarVasos() {
+            const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+            const vasosExemplo = [
+                {
+                    id: 5,
+                    nome: "Vaso de Barro Pequeno",
+                    preco: "12.00",
+                    custo: "5.00",
+                    estoque: 25,
+                    imagem: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Vaso de barro artesanal, ideal para suculentas",
+                    categoria: "vasos",
+                    material: "barro",
+                    dimensoes: "10cm diâmetro",
+                    especie: "",
+                    tamanho: "p",
+                    cor: "terracota"
+                },
+                {
+                    id: 6,
+                    nome: "Vaso de Plástico Verde",
+                    preco: "8.00",
+                    custo: "3.00",
+                    estoque: 30,
+                    imagem: "https://images.unsplash.com/photo-1591955506264-3f5a6834570a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Vaso leve e durável com furo de drenagem",
+                    categoria: "vasos",
+                    material: "plastico",
+                    dimensoes: "12cm diâmetro",
+                    especie: "",
+                    tamanho: "p",
+                    cor: "verde"
+                },
+                {
+                    id: 7,
+                    nome: "Vaso Vietnamita Médio",
+                    preco: "55.00",
+                    custo: "30.00",
+                    estoque: 8,
+                    imagem: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Vaso artesanal com design único vietnamita",
+                    categoria: "vasos",
+                    material: "ceramica",
+                    dimensoes: "25cm diâmetro",
+                    especie: "",
+                    tamanho: "m",
+                    cor: "branco"
+                },
+                {
+                    id: 8,
+                    nome: "Cachepô de Cimento",
+                    preco: "42.00",
+                    custo: "22.00",
+                    estoque: 12,
+                    imagem: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Cachepô moderno em cimento com acabamento fosco",
+                    categoria: "vasos",
+                    material: "cimento",
+                    dimensoes: "20cm diâmetro",
+                    especie: "",
+                    tamanho: "m",
+                    cor: "cinza"
+                },
+                {
+                    id: 9,
+                    nome: "Suporte de Madeira",
+                    preco: "35.00",
+                    custo: "18.00",
+                    estoque: 15,
+                    imagem: "https://images.unsplash.com/photo-1598134701590-3150c89705f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Suporte em madeira maciça para vasos médios",
+                    categoria: "vasos",
+                    material: "madeira",
+                    dimensoes: "40cm altura",
+                    especie: "",
+                    tamanho: "m",
+                    cor: "marrom"
+                },
+                {
+                    id: 26,
+                    nome: "Vaso Grande de Cerâmica",
+                    preco: "68.00",
+                    custo: "35.00",
+                    estoque: 6,
+                    imagem: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Vaso de cerâmica esmaltada para plantas grandes",
+                    categoria: "vasos",
+                    material: "ceramica",
+                    dimensoes: "35cm diâmetro",
+                    especie: "",
+                    tamanho: "g",
+                    cor: "azul"
+                }
+            ];
+
+            // Adicionar apenas se não existirem
+            vasosExemplo.forEach(vaso => {
+                if (!produtos.find(p => p.id === vaso.id)) {
+                    produtos.push(vaso);
+                }
+            });
+
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+        }
+
+        // Inicializar produtos de exemplo na primeira visita
+        if (!localStorage.getItem('vasosInicializados')) {
+            inicializarVasos();
+            localStorage.setItem('vasosInicializados', 'true');
+        }
+    </script>
+
+</body>
+</html>

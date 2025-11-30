@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessórios - IZAplantas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <h1>IZA<span>plantas</span></h1>
+                </div>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="plantas.html">Plantas</a></li>
+                        <li><a href="vasos.html">Vasos</a></li>
+                        <li><a href="acessorios.html" class="active">Acessórios</a></li>
+                        <li><a href="decoracao.html">Decoração</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container page-header">
+        <h1>Acessórios de Jardinagem</h1>
+        <p>Tudo que você precisa para cuidar das suas plantas com amor</p>
+    </section>
+
+    <section class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="tipo-acessorio">Tipo de Acessório</label>
+                <select id="tipo-acessorio">
+                    <option value="all">Todos os tipos</option>
+                    <option value="terra">Terra e Substratos</option>
+                    <option value="fertilizante">Fertilizantes e Adubos</option>
+                    <option value="ferramenta">Ferramentas</option>
+                    <option value="protecao">Proteção</option>
+                    <option value="irrigacao">Irrigação</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="volume">Volume/Peso</label>
+                <select id="volume">
+                    <option value="all">Todos os volumes</option>
+                    <option value="1l">1L / 2kg</option>
+                    <option value="3l">3L / 5kg</option>
+                    <option value="5l">5L / 10kg</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="material-acessorio">Material</label>
+                <select id="material-acessorio">
+                    <option value="all">Todos os materiais</option>
+                    <option value="metal">Metal</option>
+                    <option value="plastico">Plástico</option>
+                    <option value="madeira">Madeira</option>
+                    <option value="tecido">Tecido</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products" id="acessoriosProducts">
+            <!-- Produtos de acessórios serão carregados aqui -->
+        </div>
+    </section>
+
+   <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IZAplantas</h3>
+                <p>Transformando ambientes com a beleza da natureza</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jardin.iza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5573999535407" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/drtwyCgQq4GimYsn8" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="plantas.html">Plantas</a></li>
+                    <li><a href="vasos.html">Vasos</a></li>
+                    <li><a href="acessorios.html">Acessórios</a></li>
+                    <li><a href="decoracao.html">Decoração</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Horário de Funcionamento</h3>
+                <ul>
+                    <li>Segunda a Sexta: 8h às 17h</li>
+                    <li>Sábado: 8h às 12h</li>
+                    <li>Domingo: Fechado</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Localização</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Vila Marambaia KM6</li>
+                    <li>CEP: 45530-000</li>
+                    <li>Atrás do Posto da Polícia Rodoviária</li>
+                    <li>
+                        <a href="https://maps.app.goo.gl/drtwyCgQq4GimYsn8" target="_blank" style="color: var(--verde-folha);">
+                            <i class="fas fa-directions"></i> Ver no Google Maps
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 IZAplantas - Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
+    <!-- Carrinho de Compras -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Seu Carrinho</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Seu carrinho está vazio</p>
+                </div>
+            </div>
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">R$ 0,00</span>
+                </div>
+                <button class="btn" id="checkoutBtn" style="width: 100%;">Finalizar Pedido via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Filtros específicos para acessórios
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarProdutosPorCategoria('acessorios', 'acessoriosProducts');
+            
+            // Event listeners para filtros
+            document.getElementById('tipo-acessorio').addEventListener('change', filtrarAcessorios);
+            document.getElementById('volume').addEventListener('change', filtrarAcessorios);
+            document.getElementById('material-acessorio').addEventListener('change', filtrarAcessorios);
+        });
+
+        function filtrarAcessorios() {
+            const tipo = document.getElementById('tipo-acessorio').value;
+            const volume = document.getElementById('volume').value;
+            const material = document.getElementById('material-acessorio').value;
+            
+            // Implementar lógica de filtro
+            console.log('Filtrando acessórios:', {tipo, volume, material});
+        }
+
+        // Adicionar produtos de exemplo para acessórios
+        function inicializarAcessorios() {
+            const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+            const acessoriosExemplo = [
+                {
+                    id: 10,
+                    nome: "Terra Vegetal 5kg",
+                    preco: "12.00",
+                    custo: "6.00",
+                    estoque: 20,
+                    imagem: "https://images.unsplash.com/photo-1589923188651-268a35c9160f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Terra vegetal de alta qualidade para vasos e jardins",
+                    categoria: "acessorios",
+                    material: "",
+                    dimensoes: "5kg",
+                    especie: "",
+                    tamanho: "5kg",
+                    cor: "marrom"
+                },
+                {
+                    id: 11,
+                    nome: "Substrato para Suculentas 2kg",
+                    preco: "15.00",
+                    custo: "8.00",
+                    estoque: 15,
+                    imagem: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Substrato específico para cactos e suculentas",
+                    categoria: "acessorios",
+                    material: "",
+                    dimensoes: "2kg",
+                    especie: "",
+                    tamanho: "2kg",
+                    cor: "marrom"
+                },
+                {
+                    id: 12,
+                    nome: "Fertilizante Orgânico 1L",
+                    preco: "18.00",
+                    custo: "9.00",
+                    estoque: 12,
+                    imagem: "https://images.unsplash.com/photo-1589923188206-4b3767d5ef4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Fertilizante natural para todas as plantas",
+                    categoria: "acessorios",
+                    material: "",
+                    dimensoes: "1L",
+                    especie: "",
+                    tamanho: "1L",
+                    cor: "marrom"
+                },
+                {
+                    id: 13,
+                    nome: "Kit de Ferramentas Básico",
+                    preco: "45.00",
+                    custo: "25.00",
+                    estoque: 8,
+                    imagem: "https://images.unsplash.com/photo-1597848212624-e6d4bd7e1e92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Pá, ancinho e tesoura de poda em aço inox",
+                    categoria: "acessorios",
+                    material: "metal",
+                    dimensoes: "30cm",
+                    especie: "",
+                    tamanho: "m",
+                    cor: "prata"
+                },
+                {
+                    id: 14,
+                    nome: "Regador Plástico 2L",
+                    preco: "22.00",
+                    custo: "12.00",
+                    estoque: 10,
+                    imagem: "https://images.unsplash.com/photo-1591955506264-3f5a6834570a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Regador prático com bico longo",
+                    categoria: "acessorios",
+                    material: "plastico",
+                    dimensoes: "25cm altura",
+                    especie: "",
+                    tamanho: "m",
+                    cor: "verde"
+                },
+                {
+                    id: 15,
+                    nome: "Luvas de Jardinagem",
+                    preco: "15.00",
+                    custo: "8.00",
+                    estoque: 18,
+                    imagem: "https://images.unsplash.com/photo-1589923188206-4b3767d5ef4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Luvas confortáveis para proteção",
+                    categoria: "acessorios",
+                    material: "tecido",
+                    dimensoes: "Tamanho único",
+                    especie: "",
+                    tamanho: "m",
+                    cor: "verde"
+                }
+            ];
+
+            // Adicionar apenas se não existirem
+            acessoriosExemplo.forEach(acessorio => {
+                if (!produtos.find(p => p.id === acessorio.id)) {
+                    produtos.push(acessorio);
+                }
+            });
+
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+        }
+
+        // Inicializar produtos de exemplo na primeira visita
+        if (!localStorage.getItem('acessoriosInicializados')) {
+            inicializarAcessorios();
+            localStorage.setItem('acessoriosInicializados', 'true');
+        }
+    </script>
+</body>
+</html>

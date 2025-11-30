@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoração - IZAplantas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <h1>IZA<span>plantas</span></h1>
+                </div>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="plantas.html">Plantas</a></li>
+                        <li><a href="vasos.html">Vasos</a></li>
+                        <li><a href="acessorios.html">Acessórios</a></li>
+                        <li><a href="decoracao.html" class="active">Decoração</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container page-header">
+        <h1>Decoração</h1>
+        <p>Toques especiais para tornar seu ambiente ainda mais acolhedor</p>
+    </section>
+
+    <section class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="tipo-decoracao">Tipo de Decoração</label>
+                <select id="tipo-decoracao">
+                    <option value="all">Todos os tipos</option>
+                    <option value="arranjo">Arranjos Florais</option>
+                    <option value="buque">Buquês e Ramos</option>
+                    <option value="vela">Velas Decorativas</option>
+                    <option value="peca">Peças Decorativas</option>
+                    <option value="embalagem">Embalagens</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="tamanho-decoracao">Tamanho</label>
+                <select id="tamanho-decoracao">
+                    <option value="all">Todos os tamanhos</option>
+                    <option value="p">Pequeno</option>
+                    <option value="m">Médio</option>
+                    <option value="g">Grande</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="acabamento">Acabamento</label>
+                <select id="acabamento">
+                    <option value="all">Todos os acabamentos</option>
+                    <option value="simples">Simples</option>
+                    <option value="premium">Premium</option>
+                    <option value="artesanal">Artesanal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products" id="decoracaoProducts">
+            <!-- Produtos de decoração serão carregados aqui -->
+        </div>
+    </section>
+
+   <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IZAplantas</h3>
+                <p>Transformando ambientes com a beleza da natureza</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jardin.iza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5573999535407" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/drtwyCgQq4GimYsn8" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="plantas.html">Plantas</a></li>
+                    <li><a href="vasos.html">Vasos</a></li>
+                    <li><a href="acessorios.html">Acessórios</a></li>
+                    <li><a href="decoracao.html">Decoração</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Horário de Funcionamento</h3>
+                <ul>
+                    <li>Segunda a Sexta: 8h às 17h</li>
+                    <li>Sábado: 8h às 12h</li>
+                    <li>Domingo: Fechado</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Localização</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Vila Marambaia KM6</li>
+                    <li>CEP: 45530-000</li>
+                    <li>Atrás do Posto da Polícia Rodoviária</li>
+                    <li>
+                        <a href="https://maps.app.goo.gl/drtwyCgQq4GimYsn8" target="_blank" style="color: var(--verde-folha);">
+                            <i class="fas fa-directions"></i> Ver no Google Maps
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 IZAplantas - Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
+    <!-- Carrinho de Compras -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Seu Carrinho</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Seu carrinho está vazio</p>
+                </div>
+            </div>
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">R$ 0,00</span>
+                </div>
+                <button class="btn" id="checkoutBtn" style="width: 100%;">Finalizar Pedido via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Filtros específicos para decoração
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarProdutosPorCategoria('decoracao', 'decoracaoProducts');
+            
+            // Event listeners para filtros
+            document.getElementById('tipo-decoracao').addEventListener('change', filtrarDecoracao);
+            document.getElementById('tamanho-decoracao').addEventListener('change', filtrarDecoracao);
+            document.getElementById('acabamento').addEventListener('change', filtrarDecoracao);
+        });
+
+        function filtrarDecoracao() {
+            const tipo = document.getElementById('tipo-decoracao').value;
+            const tamanho = document.getElementById('tamanho-decoracao').value;
+            const acabamento = document.getElementById('acabamento').value;
+            
+            // Implementar lógica de filtro
+            console.log('Filtrando decoração:', {tipo, tamanho, acabamento});
+        }
+
+        // Adicionar produtos de exemplo para decoração
+        function inicializarDecoracao() {
+            const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+            const decoracaoExemplo = [
+                {
+                    id: 20,
+                    nome: "Arranjo Floral Premium",
+                    preco: "75.00",
+                    custo: "40.00",
+                    estoque: 6,
+                    imagem: "https://images.unsplash.com/photo-1487070183336-b863dc6bc18c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Composição floral exclusiva com embalagem premium",
+                    categoria: "decoracao",
+                    material: "flores naturais",
+                    dimensoes: "40cm altura",
+                    especie: "",
+                    tamanho: "g",
+                    cor: "colorido"
+                },
+                {
+                    id: 21,
+                    nome: "Buquê de Rosas Vermelhas",
+                    preco: "60.00",
+                    custo: "35.00",
+                    estoque: 8,
+                    imagem: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "12 rosas vermelhas com acabamento especial",
+                    categoria: "decoracao",
+                    material: "flores naturais",
+                    dimensoes: "35cm altura",
+                    especie: "rosa",
+                    tamanho: "m",
+                    cor: "vermelho"
+                },
+                {
+                    id: 22,
+                    nome: "Vela Aromática Natural",
+                    preco: "25.00",
+                    custo: "12.00",
+                    estoque: 15,
+                    imagem: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Vela de soja com aroma de lavanda",
+                    categoria: "decoracao",
+                    material: "soja",
+                    dimensoes: "8cm diâmetro",
+                    especie: "",
+                    tamanho: "p",
+                    cor: "roxo"
+                },
+                {
+                    id: 23,
+                    nome: "Kit Presente Artesanal",
+                    preco: "45.00",
+                    custo: "25.00",
+                    estoque: 10,
+                    imagem: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Suculenta + vaso + laço - pronto para presentear",
+                    categoria: "decoracao",
+                    material: "planta natural",
+                    dimensoes: "15cm altura",
+                    especie: "suculenta",
+                    tamanho: "p",
+                    cor: "verde"
+                },
+                {
+                    id: 24,
+                    nome: "Ramo de Girassóis",
+                    preco: "35.00",
+                    custo: "20.00",
+                    estoque: 12,
+                    imagem: "https://images.unsplash.com/photo-1597848212624-e6d4bd7e1e92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Girassóis frescos com folhagem decorativa",
+                    categoria: "decoracao",
+                    material: "flores naturais",
+                    dimensoes: "45cm altura",
+                    especie: "girassol",
+                    tamanho: "m",
+                    cor: "amarelo"
+                },
+                {
+                    id: 25,
+                    nome: "Porta-Velas Decorativo",
+                    preco: "32.00",
+                    custo: "18.00",
+                    estoque: 7,
+                    imagem: "https://images.unsplash.com/photo-1552664199-fd31f7431a55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    descricao: "Suporte para vela em madeira com detalhes naturais",
+                    categoria: "decoracao",
+                    material: "madeira",
+                    dimensoes: "12cm diâmetro",
+                    especie: "",
+                    tamanho: "p",
+                    cor: "marrom"
+                }
+            ];
+
+            // Adicionar apenas se não existirem
+            decoracaoExemplo.forEach(decoracao => {
+                if (!produtos.find(p => p.id === decoracao.id)) {
+                    produtos.push(decoracao);
+                }
+            });
+
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+        }
+
+        // Inicializar produtos de exemplo na primeira visita
+        if (!localStorage.getItem('decoracaoInicializada')) {
+            inicializarDecoracao();
+            localStorage.setItem('decoracaoInicializada', 'true');
+        }
+    </script>
+</body>
+</html>

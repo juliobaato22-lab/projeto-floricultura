@@ -1,0 +1,17 @@
+projeto-floricultura/
+│
+├── index.html (Página principal)
+├── plantas.html (Página de plantas)
+├── vasos.html (Página de vasos) ✅ NOVA
+├── acessorios.html (Página de acessórios) ✅ NOVA
+├── decoracao.html (Página de decoração) ✅ NOVA
+├── admin/
+│   ├── cadastro-produtos.html
+│   └── estoque.html
+├── css/
+│   └── style.css
+└── js/
+    ├── main.js
+    ├── carrinho.js
+    ├── admin.js
+    └── produtos.js (atualizado) ✅ ATUALIZADO

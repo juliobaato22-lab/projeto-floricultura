@@ -59,9 +59,31 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="productImage">URL da Imagem (Opcional)</label>
-                    <input type="url" id="productImage" placeholder="https://exemplo.com/imagem.jpg">
-                </div>
+    <label for="productImage">Imagem do Produto</label>
+    
+    <!-- Área de upload -->
+    <div class="upload-area" id="uploadArea">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Clique para selecionar uma imagem</p>
+        <small>Formatos: JPG, PNG, GIF (Máx: 2MB)</small>
+        <input type="file" id="productImageFile" class="file-input" accept="image/*">
+        <button type="button" class="upload-btn" onclick="document.getElementById('productImageFile').click()">
+            Selecionar Imagem
+        </button>
+    </div>
+    
+    <!-- Preview da imagem -->
+    <div class="image-preview" id="imagePreview" style="display: none;">
+        <img id="previewImage" src="" alt="Preview">
+        <div class="image-actions">
+            <button type="button" class="btn btn-outline" onclick="trocarImagem()">Trocar Imagem</button>
+            <button type="button" class="btn-remove" onclick="removerImagem()">Remover</button>
+        </div>
+    </div>
+    
+    <!-- Campo hidden para armazenar a imagem -->
+    <input type="hidden" id="productImageData">
+</div>
 
                 <div class="form-group">
                     <label for="productDescription">Descrição Curta</label>
@@ -137,7 +159,8 @@
             <div id="formMessage" style="margin-top: 20px;"></div>
         </div>
     </section>
-
+<script src="../js/image-upload.js"></script>
+<script src="../js/admin.js"></script>
     <script src="../js/admin.js"></script>
 </body>
 </html>
