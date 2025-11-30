@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos - IZAplantas Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="window.location.href='../index.html'">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <h1>IZA<span>plantas</span> <small>Admin</small></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Voltar ao Site</a></li>
+                        <li><a href="cadastro-produtos.html" class="active">Cadastrar Produtos</a></li>
+                        <li><a href="estoque.html">Ver Estoque</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="admin-panel">
+            <div class="admin-header">
+                <h1>Cadastro de Produtos</h1>
+            </div>
+
+            <div class="admin-nav">
+                <a href="cadastro-produtos.html" class="active">Cadastrar Produto</a>
+                <a href="estoque.html">Gerenciar Estoque</a>
+            </div>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Nome do Produto *</label>
+                    <input type="text" id="productName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Preço de Venda *</label>
+                    <input type="number" id="productPrice" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productCost">Custo (Opcional)</label>
+                    <input type="number" id="productCost" step="0.01" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="productStock">Quantidade em Estoque *</label>
+                    <input type="number" id="productStock" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productImage">URL da Imagem (Opcional)</label>
+                    <input type="url" id="productImage" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Descrição Curta</label>
+                    <textarea id="productDescription" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="productCategory">Categoria *</label>
+                    <select id="productCategory" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="plantas">Plantas</option>
+                        <option value="vasos">Vasos</option>
+                        <option value="acessorios">Acessórios</option>
+                        <option value="decoracao">Decoração</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productMaterial">Material (Para vasos e acessórios)</label>
+                    <select id="productMaterial">
+                        <option value="">Selecione o material</option>
+                        <option value="barro">Barro</option>
+                        <option value="plastico">Plástico</option>
+                        <option value="ceramica">Cerâmica</option>
+                        <option value="cimento">Cimento</option>
+                        <option value="madeira">Madeira</option>
+                        <option value="metal">Metal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDimensions">Dimensões (Altura x Diâmetro)</label>
+                    <input type="text" id="productDimensions" placeholder="Ex: 30cm x 15cm">
+                </div>
+
+                <div class="form-group">
+                    <label for="productSpecies">Espécie (Para plantas)</label>
+                    <input type="text" id="productSpecies" placeholder="Ex: Phalaenopsis, Cattleya">
+                </div>
+
+                <div class="form-group">
+                    <label for="productSize">Tamanho</label>
+                    <select id="productSize">
+                        <option value="">Selecione o tamanho</option>
+                        <option value="p">Pequeno (P)</option>
+                        <option value="m">Médio (M)</option>
+                        <option value="g">Grande (G)</option>
+                        <option value="gg">Extra Grande (GG)</option>
+                        <option value="muda">Muda Pequena</option>
+                        <option value="adulta">Planta Adulta</option>
+                        <option value="florada">Florada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productColor">Cor</label>
+                    <select id="productColor">
+                        <option value="">Selecione a cor</option>
+                        <option value="branco">Branco</option>
+                        <option value="preto">Preto</option>
+                        <option value="terracota">Terracota</option>
+                        <option value="colorido">Colorido</option>
+                        <option value="vermelho">Vermelho</option>
+                        <option value="amarelo">Amarelo</option>
+                        <option value="roxo">Roxo</option>
+                        <option value="azul">Azul</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Cadastrar Produto</button>
+            </form>
+
+            <div id="formMessage" style="margin-top: 20px;"></div>
+        </div>
+    </section>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

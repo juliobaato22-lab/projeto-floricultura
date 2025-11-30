@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - IZAplantas Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="window.location.href='../index.html'">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <h1>IZA<span>plantas</span> <small>Admin</small></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Voltar ao Site</a></li>
+                        <li><a href="cadastro-produtos.html">Cadastrar Produtos</a></li>
+                        <li><a href="estoque.html" class="active">Ver Estoque</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="admin-panel">
+            <div class="admin-header">
+                <h1>Gerenciamento de Estoque</h1>
+            </div>
+
+            <div class="admin-nav">
+                <a href="cadastro-produtos.html">Cadastrar Produto</a>
+                <a href="estoque.html" class="active">Gerenciar Estoque</a>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="filterCategory">Filtrar por Categoria</label>
+                    <select id="filterCategory">
+                        <option value="all">Todas as categorias</option>
+                        <option value="plantas">Plantas</option>
+                        <option value="vasos">Vasos</option>
+                        <option value="acessorios">Acessórios</option>
+                        <option value="decoracao">Decoração</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterStock">Filtrar por Estoque</label>
+                    <select id="filterStock">
+                        <option value="all">Todos</option>
+                        <option value="low">Estoque Baixo (≤ 5)</option>
+                        <option value="out">Fora de Estoque</option>
+                    </select>
+                </div>
+            </div>
+
+            <table class="table" id="stockTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="stockTableBody">
+                    <!-- Dados serão preenchidos via JavaScript -->
+                </tbody>
+            </table>
+
+            <div id="stockSummary" style="margin-top: 20px; padding: 15px; background-color: var(--verde-menta); border-radius: 10px;">
+                <!-- Resumo do estoque -->
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

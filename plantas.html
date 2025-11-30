@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas - IZAplantas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <h1>IZA<span>plantas</span></h1>
+                </div>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="plantas.html" class="active">Plantas</a></li>
+                        <li><a href="vasos.html">Vasos</a></li>
+                        <li><a href="acessorios.html">Acessórios</a></li>
+                        <li><a href="decoracao.html">Decoração</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container page-header">
+        <h1>Plantas</h1>
+        <p>Encontre a planta perfeita para cada espaço</p>
+    </section>
+
+    <section class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="tipo-planta">Tipo de Planta</label>
+                <select id="tipo-planta">
+                    <option value="all">Todos os tipos</option>
+                    <option value="ornamental">Flores Ornamentais</option>
+                    <option value="sombra">Plantas de Sombra</option>
+                    <option value="sol">Plantas de Sol</option>
+                    <option value="frutifera">Mudas Frutíferas</option>
+                    <option value="tempero">Temperos</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="tamanho-planta">Tamanho</label>
+                <select id="tamanho-planta">
+                    <option value="all">Todos os tamanhos</option>
+                    <option value="muda">Muda Pequena</option>
+                    <option value="adulta">Planta Adulta</option>
+                    <option value="florada">Florada</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="especie">Espécie</label>
+                <select id="especie">
+                    <option value="all">Todas as espécies</option>
+                    <option value="orquidea">Orquídea</option>
+                    <option value="suculenta">Suculenta</option>
+                    <option value="cacto">Cacto</option>
+                    <option value="samambaia">Samambaia</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products" id="plantasProducts">
+            <!-- Produtos de plantas serão carregados aqui -->
+        </div>
+    </section>
+
+    <!-- Incluir os mesmos footer e carrinho do index.html -->
+    <script src="js/produtos.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Filtros específicos para plantas
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarProdutosPorCategoria('plantas', 'plantasProducts');
+            
+            // Event listeners para filtros
+            document.getElementById('tipo-planta').addEventListener('change', filtrarPlantas);
+            document.getElementById('tamanho-planta').addEventListener('change', filtrarPlantas);
+            document.getElementById('especie').addEventListener('change', filtrarPlantas);
+        });
+
+        function filtrarPlantas() {
+            const tipo = document.getElementById('tipo-planta').value;
+            const tamanho = document.getElementById('tamanho-planta').value;
+            const especie = document.getElementById('especie').value;
+            
+            // Implementar lógica de filtro
+            console.log('Filtrando plantas:', {tipo, tamanho, especie});
+        }
+    </script>
+</body>
+</html>
