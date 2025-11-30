@@ -128,6 +128,28 @@ nav ul li a.active {
     cursor: pointer;
     color: var(--verde-folha);
 }
+/* Adicionar após o .cart-icon no CSS */
+.social-header {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.social-header a {
+    color: var(--verde-folha);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-header a:hover {
+    color: var(--marrom-barro);
+}
+
+@media (max-width: 768px) {
+    .social-header {
+        display: none;
+    }
+}
 
 /* Hero Section */
 .hero {
@@ -878,4 +900,94 @@ footer {
         display: block;
         overflow-x: auto;
     }
+}
+/* Estilos para upload de imagem */
+.upload-area {
+    border: 2px dashed var(--verde-menta);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: var(--bege-claro);
+    margin-bottom: 15px;
+}
+
+.upload-area:hover {
+    border-color: var(--verde-oliva);
+    background-color: var(--verde-menta);
+}
+
+.upload-area i {
+    font-size: 3rem;
+    color: var(--verde-oliva);
+    margin-bottom: 15px;
+}
+
+.upload-area p {
+    color: var(--cinza-texto);
+    margin-bottom: 10px;
+}
+
+.upload-area small {
+    color: var(--cinza-texto);
+    font-size: 0.8rem;
+}
+
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    border: 2px solid var(--verde-menta);
+}
+
+.upload-btn {
+    background-color: var(--verde-oliva);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.upload-btn:hover {
+    background-color: var(--verde-folha);
+}
+
+.file-input {
+    display: none;
+}
+
+.current-image {
+    margin-bottom: 15px;
+}
+
+.current-image img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    border: 2px solid var(--verde-menta);
+}
+
+.image-actions {
+    margin-top: 10px;
+}
+
+.btn-remove {
+    background-color: var(--rosa-floral);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 10px;
 }

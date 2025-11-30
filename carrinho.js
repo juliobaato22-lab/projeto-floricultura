@@ -209,22 +209,31 @@ function removeFromCart(productId) {
 function checkout() {
     if (cart.length === 0) return;
     
-    let message = "Pedido via IZAplantas - Floricultura\n\n🌼 Itens do Pedido:\n\n";
+   let message = "🪴 *PEDIDO - IZAPLANTAS* 🪴\n\n";
+message += "Olá! Gostaria de fazer o seguinte pedido:\n\n";
+message += "📋 *ITENS DO PEDIDO:*\n\n";
     
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        message += `• ${item.name} – Qtd: ${item.quantity} – R$ ${item.price.toFixed(2)} cada – Subtotal: R$ ${itemTotal.toFixed(2)}\n\n`;
-    });
-    
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    message += `Total: R$ ${total.toFixed(2)}\n\n`;
-    message += "Observações: (campo opcional)";
+cart.forEach(item => {
+    const itemTotal = item.price * item.quantity;
+    message += `• ${item.name}\n`;
+    message += `  Quantidade: ${item.quantity}\n`;
+    message += `  Preço unitário: R$ ${item.price.toFixed(2)}\n`;
+    message += `  Subtotal: R$ ${itemTotal.toFixed(2)}\n\n`;
+});
+
+const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+message += `💰 *VALOR TOTAL: R$ ${total.toFixed(2)}*\n\n`;
+message += "📝 *OBSERVAÇÕES:* \n";
+message += "(Por favor, informe se há preferência de cor, tamanho ou outras observações)\n\n";
+message += "📍 *RETIRADA NA LOJA:*\n";
+message += "Vila Marambaia KM6 - Atrás do Posto PRF\n";
+message += "Segunda a Sexta: 8h às 17h | Sábado: 8h às 12h";
     
     // Codifica a mensagem para URL
     const encodedMessage = encodeURIComponent(message);
     
-    // Número do WhatsApp da loja (substitua pelo número real)
-    const phoneNumber = "5511999999999";
+    // Número do WhatsApp da loja ATUALIZADO
+    const phoneNumber = "5573999535407";
     
     // Abre o WhatsApp com a mensagem pré-preenchida
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
